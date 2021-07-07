@@ -1,0 +1,27 @@
+
+var myImg = document.querySelector("img");
+
+
+var xGlobal ;
+var yGlobal ;
+
+document.addEventListener("mousemove" , test)
+
+function test(e)
+{
+    xGlobal = e.clientX
+    yGlobal = e.clientY
+
+    myImg.style.left = e.clientX;
+    myImg.style.top = e.clientY;
+}
+
+document.addEventListener("click" , function(){
+
+    myImg.style.left = xGlobal;
+    myImg.style.top = yGlobal;
+
+    document.removeEventListener("mousemove" , test )
+
+})
+
